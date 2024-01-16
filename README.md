@@ -19,8 +19,3 @@ The boilerplate uses the default Users table in Keystone and uses built-in Keyst
 
 ## Version control
 `0.1.0`: Higher Order Component used as a session management
-
-
-
-
-# skylark-simple-boilerplate
