@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Skylark Simple Boilerplate
+The boilerplate utilises GraphQL and Keystone. Before starting, make sure to copy the example .env file and point to the right Keystone instance. 
 
-## Getting Started
+`cp .env.example .env.local `
 
-First, run the development server:
+## Authentication
+The boilerplate uses the default Users table in Keystone and uses built-in Keystone authentication mutation with email and password. Then, it creates a cookie to store the session token provided by Keystone and utilises a HOC to validate the session with Keystone. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Current flaws
+1. At the moment, the HOC checks for the session every single time a user navigates around the app. To improve that, we should be checking for token’s validity in pre-set intervals. 
+2. There is no way to retrieve forgotten password
+3. There is no way to sign up
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## TODOs
+1. Address the authentication flaws
+2. Implement a way to install components that Skylark develops over the course of time
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Version control
+`0.1.0`: Higher Order Component used as a session management
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# skylark-simple-boilerplate
